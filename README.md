@@ -1,7 +1,7 @@
 # bashrc-aliases
 My personal bashrc aliases. Useful. Made public for anyone interested in simplifying their terminal usage.
 
-## Usage
+## Setup/Install
 Append the contents of `aliases` to your `~./bashrc` or `~./zshrc` file.\
 Quick install:\
 `curl -fsSL https://raw.githubusercontent.com/STR4NG3RdotSH/bashrc-aliases/main/aliases | while read -r line; do [ -f ~/.bashrc ] && echo "$line" >> ~/.bashrc; [ -f ~/.zshrc ] && echo "$line" >> ~/.zshrc; done`\
@@ -12,9 +12,9 @@ Notes:\
 -If re-installing to apply latest version, be sure to run the quick uninstall first as the install is a simple append and can result in duplicate aliases.\
 -Some systems require a re-login, some will work with just re-opening your terminal. Some will even work immediately.
 
-## Defined functions
+## Defined functions/usage
 ### lgrep 
-(**L**ogs**GREP**)\
+(**L**<sup>ogs</sup>**GREP**)\
 Greps all log files in `/var/log/*` for specified strings. Forces case-insensitive for your search terms.\
 Example Usage: `lgrep error_code_123 error_code_124 error_code_69420`\
 Example Output:
@@ -33,11 +33,11 @@ Example Output:
 ```
 
 ### lessf 
-(**LESS**+**F**)
+(**LESS**<sup>+</sup>**F**)
 Using command `less +F` and specifying a path/name essentially works the same as `tail -f`, I just prefer to use less. This function also bakes in search terms (normally you have to CTRL+C and type `/(searchterm1|searchterm2|etc)` and hit enter, but this function accepts your search terms at launch instead). Forces case-insensitive for your search terms.\
 Example Usage: `lessf error_code_123 error_code_124 error_code_69420 /var/log/syslog`\
 
-## Defined aliases
+## Defined aliases/usage
 ### ll
 A popular and common alias, simplifying `ls -l` down to a simple `ll`, with some added preferences (`hA`, human readable and include `.` hidden files).\
 Example Usage: `ll /var/log/testdir`\
