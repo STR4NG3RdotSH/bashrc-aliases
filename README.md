@@ -14,9 +14,9 @@ Notes:\
 
 ## Defined functions
 ### lgrep 
-(**L**ogs**GREP**)
-Greps all log files in `/var/log/*` for specified strings. Forces case-insensitive for your search terms.
-Example Usage: `lgrep error_code_123 error_code_124 error_code_69420`
+(**L**ogs**GREP**)\
+Greps all log files in `/var/log/*` for specified strings. Forces case-insensitive for your search terms.\
+Example Usage: `lgrep error_code_123 error_code_124 error_code_69420`\
 Example Output:
 ```
 /var/log/syslog:error_code_123
@@ -34,13 +34,13 @@ Example Output:
 
 ### lessf 
 (**LESS**+**F**)
-Using command `less +F` and specifying a path/name essentially works the same as `tail -f`, I just prefer to use less. This function also bakes in search terms (normally you have to CTRL+C and type `/(searchterm1|searchterm2|etc)` and hit enter, but this function accepts your search terms at launch instead). Forces case-insensitive for your search terms.
-Example Usage: `lessf error_code_123 error_code_124 error_code_69420 /var/log/syslog`
+Using command `less +F` and specifying a path/name essentially works the same as `tail -f`, I just prefer to use less. This function also bakes in search terms (normally you have to CTRL+C and type `/(searchterm1|searchterm2|etc)` and hit enter, but this function accepts your search terms at launch instead). Forces case-insensitive for your search terms.\
+Example Usage: `lessf error_code_123 error_code_124 error_code_69420 /var/log/syslog`\
 
 ## Defined aliases
 ### ll
-A popular and common alias, simplifying `ls -l` down to a simple `ll`, with some added preferences (`hA`, human readable and include `.` hidden files).
-Example Usage: `ll /var/log/testdir`
+A popular and common alias, simplifying `ls -l` down to a simple `ll`, with some added preferences (`hA`, human readable and include `.` hidden files).\
+Example Usage: `ll /var/log/testdir`\
 Example Output:
 ```
 drwxr-xr-x 2 j j 4.0K May 17 20:20 anothertestdir
