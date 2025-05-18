@@ -15,5 +15,27 @@ lessf() {
   less +IF"+/(${pattern})" "$file"
 }
 
+nuke() {
+  local proc_name="$1"
+  if [[ -z "$proc_name" ]]; then
+    echo "Usage: nuke <process_name>"
+    return 1
+  fi
+
+  local pids=()
+  while IFS= read -r pid; do
+    pids+=("$pid")
+  done < <(pgrep -fi "$proc_name")
+
+  if [[ ${#pids[@]} -eq 0 ]]; then
+    echo "No matching processes found for \"$proc_name\"."
+    return 0
+  fi
+
+  kill -9 "${pids[@]}" 2>/dev/null
+  echo "${#pids[@]} processes nuked!"
+}
+
+
 alias ll="ls -lhA --color=auto"
 #STR4NG3R_ALIASES_END
