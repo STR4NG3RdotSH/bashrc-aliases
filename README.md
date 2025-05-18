@@ -2,14 +2,14 @@
 My personal bashrc aliases. Useful. Made public for anyone interested in simplifying their terminal usage.
 
 ## Usage
-Append the contents of `aliases` to your `~./bashrc` or `~./zshrc` file.
-Quick install:
-`curl -fsSL https://raw.githubusercontent.com/STR4NG3RdotSH/bashrc-aliases/main/aliases | while read -r line; do [ -f ~/.bashrc ] && echo "$line" >> ~/.bashrc; [ -f ~/.zshrc ] && echo "$line" >> ~/.zshrc; done`
-Quick uninstall:
-`for f in ~/.bashrc ~/.zshrc; do [ -f "$f" ] && sed -i '/#STR4NG3R_ALIASES_START/,/#STR4NG3R_ALIASES_END/d' "$f"; done`
-Notes:
--Don't add anything between the `#STR4NG3R_ALIASES_START` and `#STR4NG3R_ALIASES_END` lines, after installation, because if you run the quick uninstall, everything between these 2 lines gets wiped.
--If re-installing to apply latest version, be sure to run the quick uninstall first as the install is a simple append and can result in duplicate aliases.
+Append the contents of `aliases` to your `~./bashrc` or `~./zshrc` file.\
+Quick install:\
+`curl -fsSL https://raw.githubusercontent.com/STR4NG3RdotSH/bashrc-aliases/main/aliases | while read -r line; do [ -f ~/.bashrc ] && echo "$line" >> ~/.bashrc; [ -f ~/.zshrc ] && echo "$line" >> ~/.zshrc; done`\
+Quick uninstall:\
+`for f in ~/.bashrc ~/.zshrc; do [ -f "$f" ] && sed -i '/#STR4NG3R_ALIASES_START/,/#STR4NG3R_ALIASES_END/d' "$f"; done`\
+Notes:\
+-Don't add anything between the `#STR4NG3R_ALIASES_START` and `#STR4NG3R_ALIASES_END` lines, after installation, because if you run the quick uninstall, everything between these 2 lines gets wiped.\
+-If re-installing to apply latest version, be sure to run the quick uninstall first as the install is a simple append and can result in duplicate aliases.\
 -Some systems require a re-login, some will work with just re-opening your terminal. Some will even work immediately.
 
 ## Defined functions
