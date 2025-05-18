@@ -35,7 +35,15 @@ Example Output:
 ### lessf 
 (**LESS**<sup>+</sup>**F**)
 Using command `less +F` and specifying a path/name essentially works the same as `tail -f`, I just prefer to use less. This function also bakes in search terms (normally you have to CTRL+C and type `/(searchterm1|searchterm2|etc)` and hit enter, but this function accepts your search terms at launch instead). Forces case-insensitive for your search terms.\
-Example Usage: `lessf error_code_123 error_code_124 error_code_69420 /var/log/syslog`\
+Example Usage: `lessf error_code_123 error_code_124 error_code_69420 /var/log/syslog`
+
+### nuke
+Single word command, accepts single string, checks for processes with that name and kills them all. Essentially a loop with `kill -9`. Fast. Efficient. Kills without warning, confirmation or mercy. Like the T-1000.\
+Example Usage: `nuke firefox`\
+Example Output:
+```
+13 processes nuked!
+```
 
 ## Defined aliases/usage
 ### ll
