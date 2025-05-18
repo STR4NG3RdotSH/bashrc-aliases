@@ -1,0 +1,19 @@
+#STR4NG3R_ALIASES_START
+# https://github.com/STR4NG3RdotSH/bashrc-aliases
+
+lgrep() {
+  local pattern=$(printf '%s|' "$@")
+  pattern=${pattern%|}
+  grep -iER --color=always -I "$pattern" /var/log/*
+}
+
+lessf() {
+  local file="${@: -1}"         # last argument = filename
+  local pattern_args=("${@:1:$#-1}")  # all except last = search terms
+  local pattern=$(printf '%s|' "${pattern_args[@]}")
+  pattern=${pattern%|}
+  less +IF"+/(${pattern})" "$file"
+}
+
+alias ll="ls -lhA --color=auto"
+#STR4NG3R_ALIASES_END
