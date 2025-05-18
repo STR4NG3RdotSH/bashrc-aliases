@@ -39,3 +39,4 @@ nuke() {
 
 alias ll="ls -lhA --color=auto"
 #STR4NG3R_ALIASES_END
+
