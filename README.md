@@ -10,7 +10,8 @@ Quick uninstall:\
 Notes:\
 -Don't add anything between the `#STR4NG3R_ALIASES_START` and `#STR4NG3R_ALIASES_END` lines, after installation, because if you run the quick uninstall, everything between these 2 lines gets wiped.\
 -If re-installing to apply latest version, be sure to run the quick uninstall first as the install is a simple append and can result in duplicate aliases.\
--Some systems require a re-login, some will work with just re-opening your terminal. Some will even work immediately.
+-Some systems require a re-login, some will work with just re-opening your terminal. Some will even work immediately.  
+OR you can just run `source ~/.bashrc` (or specify whatever `rc` file you use)
 
 ## Defined functions/usage
 ### lgrep 
