@@ -48,7 +48,11 @@ Example Output:
 ### clone
 Clone any disk (Disk to disk destructive clone)  
 Usage: `clone /dev/sdx /dev/sdy`  
-Just a function that walks you thru the process so you don't have to remember all the cryptic `dd` stuff, while adding confirmations before actioning.
+Just a function that walks you thru the process so you don't have to remember all the cryptic `dd` stuff, while adding confirmations before actioning. Gives a tidy progress readout as well :)  
+Before writing, it checks:  
+ - Both provided /dev/xxx's are actual block devices
+ - Destination device is not smaller than source device
+ - That you're SURE you want to overwrite all data on destination device
 
 ## Defined aliases/usage
 ### ll
