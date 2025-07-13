@@ -46,8 +46,8 @@ Example Output:
 ```
 
 ### clone
-Clone any disk (Disk to disk destructive clone)
-Usage: `clone /dev/sdx /dev/sdy`
+Clone any disk (Disk to disk destructive clone)  
+Usage: `clone /dev/sdx /dev/sdy`  
 Just a function that walks you thru the process so you don't have to remember all the cryptic `dd` stuff, while adding confirmations before actioning.
 
 ## Defined aliases/usage
