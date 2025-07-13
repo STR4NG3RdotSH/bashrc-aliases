@@ -36,7 +36,50 @@ nuke() {
   echo "${#pids[@]} processes nuked!"
 }
 
-
 alias ll="ls -lhA --color=auto"
+
+#Disk clone. Usage: clone /dev/sdx /dev/sdy
+#                         SOURCE   DEST
+clone() {
+  local src="$1"
+  local dst="$2"
+
+  if [[ -z "$src" || -z "$dst" ]]; then
+    echo "Usage: clone /dev/source /dev/dest"
+    return 1
+  fi
+
+  # Ensure both source and destination are block devices
+  if [[ ! -b "$src" || ! -b "$dst" ]]; then
+    echo "Error: One or both paths are not valid block devices."
+    return 1
+  fi
+
+  # Get device sizes in bytes
+  local src_size=$(blockdev --getsize64 "$src")
+  local dst_size=$(blockdev --getsize64 "$dst")
+
+  if (( dst_size < src_size )); then
+    echo "Error: Destination disk is smaller than source disk."
+    echo "Source: $((src_size / 1024 / 1024)) MB, Destination: $((dst_size / 1024 / 1024)) MB"
+    return 1
+  fi
+
+  # Show sizes
+  echo "Source ($src): $((src_size / 1024 / 1024)) MB"
+  echo "Destination ($dst): $((dst_size / 1024 / 1024)) MB"
+
+  # Confirmation prompt
+  read -p "Are you sure you want to overwrite ALL data on $dst? [y/N] " confirm
+  if [[ "$confirm" != [yY] ]]; then
+    echo "Aborted."
+    return 1
+  fi
+
+  echo "Starting clone from $src to $dst..."
+  sudo dd if="$src" of="$dst" bs=64M status=progress conv=fsync
+}
+
+
 #STR4NG3R_ALIASES_END
 

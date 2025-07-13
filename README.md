@@ -45,6 +45,11 @@ Example Output:
 13 processes nuked!
 ```
 
+### clone
+Clone any disk (Disk to disk destructive clone)
+Usage: `clone /dev/sdx /dev/sdy`
+Just a function that walks you thru the process so you don't have to remember all the cryptic `dd` stuff, while adding confirmations before actioning.
+
 ## Defined aliases/usage
 ### ll
 A popular and common alias, simplifying `ls -l` down to a simple `ll`, with some added preferences (`hA`, human readable and include `.` hidden files).\
